@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: yes
+
+  vars:
+    dependencies:
+      - git
+      - python-pip
+      - python3-pip
+
+  roles:
+    - python-bottle
+    - dependencies
+    - apache
